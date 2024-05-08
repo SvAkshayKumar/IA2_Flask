@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='st.css') }}">
+</head>
+<body>
+    <h1>Library Management</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/display">Borrow</a></li>
+            <li><a href="/update_display">Update/Delete Books</a></li>
+            <li><a href="/add">Add</a></li>
+            <li><a href="/borrowed_display">Borrowed Books</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Search for books -->
+        <h2>Search Books</h2>
+        <form action="/search" method="get">
+            <input type="text" name="query" placeholder="Enter Title/Author"><br>
+            <input type="submit" value="Search">
+        </form>
+        <!-- Display list of books -->
+        <div id="search-results"></div>
+        
+        <!-- Script to handle search results -->
+        <script>
+            document.querySelector('form[action="/search"]').addEventListener('submit', function(event) {
+                event.preventDefault();
+                fetch(`/search?query=${document.querySelector('input[name="query"]').value}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const resultsDiv = document.getElementById('search-results');
+                        resultsDiv.innerHTML = '';
+                        data.forEach(book => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `ID: ${book[0]}, Title: ${book[1]}, Author: ${book[2]}, Year: ${book[3]}`;
+                            resultsDiv.appendChild(listItem);
+                        });
+                    });
+            });
+        </script>
+        <hr><hr>
+        <h2>Available Books</h2>
+        <ul>
+            {% for book in books %}
+            <div class="container_books">
+                ID: {{ book[0] }}, Title: {{ book[1] }}, Author: {{ book[2] }}, Year: {{ book[3] }}
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

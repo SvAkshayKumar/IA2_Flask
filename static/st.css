@@ -1,0 +1,131 @@
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif; /* Use a clean and readable font */
+    background-color: #f5f5f5; /* Light background color for readability */
+    margin: 0;
+    padding: 20px;
+    
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Horizontal layout */
+nav ul li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between items as needed */
+}
+
+/* Style for links */
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.7s;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: skyblue;
+}
+
+/* Center the main title */
+h1 {
+    text-align: center;
+    color: #333; /* Dark color for contrast */
+}
+
+/* Styling for section headers */
+h2 {
+    color: #444;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.container {
+    width: 95%; /* Adjust this value as needed */
+    margin: 50px auto; /* Center the container vertically and horizontally */
+    margin-top: 40px;
+    padding: 50px; /* Add space around the container */
+    background-color: #def0ec89;
+    border-radius: 40px; /* Add rounded corners to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Add a shadow effect */
+    padding: 20px; /* Add padding to separate navbar from the edge */
+     
+
+}
+.container_books {
+    width: 90%; /* Adjust this value as needed */
+    margin: 20px auto; /* Center the container vertically and horizontally */
+    padding: 10px; /* Add space around the container */
+    background-color: #b2b2b289;
+    border-radius: 10px; /* Add rounded corners to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 30); /* Add a shadow effect */
+}
+
+
+/* Basic styling for forms */
+form {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Inputs in forms */
+input {
+    font-size: 1em;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Make inputs full-width */
+}
+
+/* Form buttons */
+input[type="submit"] {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Hover effect for form buttons */
+input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Styling for unordered lists */
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+}
+
+/* Styling for list items */
+li {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Style for search results section */
+#search-results {
+    margin-top: 20px;
+}
+
+/* Footer styling (if needed) */
+footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.8em;
+    margin-top: 30px;
+}

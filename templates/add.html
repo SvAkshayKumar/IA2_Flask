@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/display">Borrow</a></li>
+            <li><a href="/update_display">Update/Delete Books</a></li>
+            <li><a href="/add">Add</a></li>
+            <li><a href="/borrowed_display">Borrowed Books</a></li>
+        </ul>
+    </nav>
+    <!-- Add a new book -->
+    <div class="container">
+        <h2>Add Book</h2>
+        <form action="/add" method="post">
+            Title: <input type="text" name="title" required><br>
+            Author: <input type="text" name="author" required><br>
+            Year: <input type="number" name="year" required><br>
+            <input type="submit" value="Add Book">
+        </form>
+    </div>
+</body>
+</html>

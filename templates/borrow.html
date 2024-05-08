@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Book</title>
+    <link rel="stylesheet" href="/static/borrow.css">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/display">Borrow</a></li>
+            <li><a href="/update_display">Update/Delete Books</a></li>
+            <li><a href="/add">Add</a></li>
+            <li><a href="/borrowed_display">Borrowed Books</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Book Details</h1>
+        <ul>
+            <li class="booking">
+                <div class="booking-info">
+                    <strong>ID:</strong> {{ book_id }}<br>
+                    <strong>Title:</strong> {{ book_details[0] }}<br>
+                    <strong>Author:</strong> {{ book_details[1] }}<br>
+                    <strong>Year:</strong> {{ book_details[2] }}
+                </div>
+                <div class="booking-buttons">
+                    <form action="/borrow" method="POST">
+                        <input type="hidden" name="book_id" value="{{ book_id }}">
+                        <label for="borrower_name"><b>Borrower Name:</b></label>
+                        <input type="text" id="borrower_name" name="borrower_name" placeholder="Enter Name" required><br><br>
+                        <button type="submit">Borrow</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

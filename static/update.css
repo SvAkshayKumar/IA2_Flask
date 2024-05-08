@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif; /* Use a clean and readable font */
+    background-color: #f5f5f5; /* Light background color for readability */
+    margin: 0;
+    padding: 20px;
+    background-size: cover; /* Ensure the background image covers the entire body */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Horizontal layout */
+nav ul li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between items as needed */
+}
+
+/* Style for links */
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.7s;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: skyblue;
+}
+.container {
+    width: 70%; /* Adjust this value as needed */
+    margin: 50px auto; /* Center the container vertically and horizontally */
+    margin-top: 100px;
+    padding: 50px; /* Add space around the container */
+    background-color: #def0ec89;
+    border-radius: 40px; /* Add rounded corners to the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Add a shadow effect */
+     padding: 20px; /* Add padding to separate navbar from the edge */
+     
+
+}
+
+form {
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+}
+
+input[type="submit"] {
+    display: block;
+    margin-left: 200px;
+    width: 30%;
+    padding: 5px ;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.7s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
