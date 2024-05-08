@@ -3,20 +3,19 @@ import sqlite3
 app = Flask(__name__)
 def connect_db():
     return sqlite3.connect('library.db')
-def init_db():
-    with sqlite3.connect('library.db') as conn:
-        conn.execute('''CREATE TABLE IF NOT EXISTS books
-                        (id INTEGER PRIMARY KEY AUTOINCREMENT, 
-                         title TEXT, 
-                         author TEXT, 
-                         year INTEGER)''')
-        conn.execute('''CREATE TABLE IF NOT EXISTS borrowed_books
-                        (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                         borrower_name TEXT,
-                         author TEXT,
-                         year TEXT,
-                         book_name TEXT,
-                         borrow_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
+with sqlite3.connect('library.db') as conn:
+    conn.execute('''CREATE TABLE IF NOT EXISTS books
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+                        title TEXT, 
+                        author TEXT, 
+                        year INTEGER)''')
+    conn.execute('''CREATE TABLE IF NOT EXISTS borrowed_books
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        borrower_name TEXT,
+                        author TEXT,
+                        year TEXT,
+                        book_name TEXT,
+                        borrow_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP)''')
 @app.route('/')
 def home():
     with sqlite3.connect('library.db') as conn:
@@ -123,7 +122,3 @@ def return_book():
                              (borrowed_book[4], borrowed_book[2], borrowed_book[3]))
                 conn.execute('DELETE FROM borrowed_books WHERE id = ?', (book_id,))
                 return redirect('/borrowed_display')
-
-if __name__ == '__main__':
-    init_db()
-    app.run()
