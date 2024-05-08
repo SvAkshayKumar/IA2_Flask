@@ -17,7 +17,8 @@
         </ul>
     </nav>
     <div class="container">
-        <h1>All Bookings</h1>
+        <h1>Update/Delete Books</h1>
+        {% if bookings %}
         <ul>
             {% for booking in bookings %}
                 <li class="booking">
@@ -36,10 +37,14 @@
                             <input type="hidden" name="id" value="{{ booking[0] }}">
                             <button type="submit">Delete</button>
                         </form>
-                    </div><hr><hr>
+                    </div>
+                    <hr><hr>
                 </li>
             {% endfor %}
         </ul>
+        {% else %}
+        <p>Nothing To Delete.</p>
+        {% endif %}
     </div>
 </body>
 </html>
