@@ -126,4 +126,4 @@ def return_book():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True,port=9001)
+    app.run()
