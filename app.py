@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify,flash
+from flask import Flask, render_template, request, redirect, jsonify
 import sqlite3
 app = Flask(__name__)
 def connect_db():
